@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 한 잔</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/recommendation-modal.css">
+    <script src="../static/lib/jquery-3.6.0.min.js"></script>
+    <script src="../static/lib/bootstrap.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('91162417cc0810280c6a8d727a6240cf');
+        Kakao.isInitialized();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">오늘의 칵테일 추천받기
+</button>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-whole">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">오늘의 칵테일 추천받기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="goToMain()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <section id="main">
+                        <h2 class="start-title">오늘의 칵테일 추천</h2>
+                        <h5 class="pt-5 start-disc">
+                            간단한 질문들에 응답해 주세요. <br> <br>
+                            아래 시작하기 버튼을 누르면 테스트가 시작됩니다.
+                        </h5>
+                        <button onclick="begin()" class="btn btn-outline-primary mt-5">시작하기</button>
+                    </section>
+                    <section class="grid" id="qna" style="display: none">
+                        <div class="status">
+                            <div class="statusBar">
+                            </div>
+                        </div>
+                        <div id="quiz" >
+                            <p id="question" class="question"></p>
+                            <div>
+                            <button id="buttons" class="btn btn-outline-primary mt-4"></button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="result" style="display:none">
+                        <h2 class="result-title">오늘의 한 잔은?</h2>
+                        <div class="resultName">
+                        </div>
+                            <div class="resultImg">
+                            </div>
+                        <div>
+                            <button type="button" class=" btn-outline-primary mt-4 final-btn " onclick="goToMain()">다시 테스트하기</button>
+                            <button type="button" class=" btn-outline-primary mt-4 final-btn" onclick="">칵테일 정보 보기</button>
+                            <button type="button" class=" btn-outline-primary mt-4 final-btn" onclick="kakaoShare()">카카오톡 공유하기</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="goToMain()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/recommendation-data.js" charset="utf-8"></script>
+<script src="../static/js/recommendation-modal.js" charset="utf-8"></script>
+</body>
+
+</html>
