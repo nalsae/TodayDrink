@@ -20,4 +20,4 @@
 * Back-End<br>
 : Python, mongoDB<br>
 * Distribution<br>
-: AWS<br>
+: AWS
