@@ -15,9 +15,9 @@
 6. 주변 칵테일 바 검색
 
 ## 🔸 기술 스펙
-* Front-End<br>
-: HTML, CSS, JS, jQuery, Jinja, Bootstrap<br>
-* Back-End<br>
-: Python, mongoDB<br>
-* Distribution<br>
+* Front-End <br>
+: HTML, CSS, JS, jQuery, Jinja, Bootstrap <br>
+* Back-End <br> 
+: Python, mongoDB <br>
+* Distribution <br>
 : AWS
